@@ -1,0 +1,7 @@
+[
+	{
+  		"from": "/openai-api-tutorial/" ,
+		"to":  "/openai-completions-api-tutorial/",
+		"permanent": true
+	}
+]

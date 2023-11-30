@@ -18,9 +18,10 @@ const autoprefixer = require('autoprefixer');
 const colorFunction = require('postcss-color-mod-function');
 const cssnano = require('cssnano');
 const easyimport = require('postcss-easy-import');
+const tailwind = require('tailwindcss')
 
-const REPO = 'TryGhost/Casper';
-const REPO_READONLY = 'TryGhost/Casper';
+const REPO = 'timmywheels/codesnippet-casper-theme';
+const REPO_READONLY = 'timmywheels/codesnippet-casper-theme';
 const CHANGELOG_PATH = path.join(process.cwd(), '.', 'changelog.md');
 
 function serve(done) {
@@ -51,7 +52,8 @@ function css(done) {
             easyimport,
             colorFunction(),
             autoprefixer(),
-            cssnano()
+            tailwind('./tailwind.config.js'),
+            cssnano(),
         ]),
         dest('assets/built/', {sourcemaps: '.'}),
         livereload()
@@ -73,7 +75,8 @@ function js(done) {
 }
 
 function zipper(done) {
-    const filename = require('./package.json').name + '.zip';
+    // const filename = require('./package.json').name + '.zip';
+    const filename = 'codesnippet.zip';
 
     pump([
         src([

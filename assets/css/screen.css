@@ -28,6 +28,13 @@ production stylesheet in assets/built/screen.css
 
 /* Import CSS reset and base styles */
 @import "global.css";
+@import "prism.css";
+@import "prism-themes/themes/prism-one-dark.min.css";
+
+/* disable tailwind preflight styles as they interfere with ghost styles */
+/* @import "tailwindcss/base"; */
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
 :root {
 
@@ -1276,6 +1283,7 @@ html.no-infinite-scroll .pagination {
     margin-left: auto;
     margin-right: auto;
     width: 100%;
+    border-radius: 1rem;
 }
 
 @media (max-width: 767px) {
@@ -1533,6 +1541,7 @@ except for when immediately preceeded by a heading */
 /* This keeps small iamges centered */
 .kg-image-card img {
     margin: auto;
+    border-radius: 1rem;
 }
 
 .has-serif-title .kg-toggle-card .kg-toggle-heading-text {
@@ -1797,6 +1806,10 @@ iframe.instagram-media + script + :not([id]) {
     letter-spacing: -0.005em;
     background: var(--ghost-accent-color);
     border-radius: 6px;
+}
+
+#post-subscribe-link.post-card[class*=post-access-] .post-card-image-link:after {
+    background-color: transparent;
 }
 
 
